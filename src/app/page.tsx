@@ -1,4 +1,3 @@
-import { ReposChart } from "~/components/reposChart";
 import { api, HydrateClient } from "~/trpc/server";
 
 export default async function Home() {
@@ -9,7 +8,6 @@ export default async function Home() {
           <h1 className="text-2xl font-bold tracking-tight">
             Cursor GitHub repos
           </h1>
-          <ReposChart />
         </div>
       </main>
     </HydrateClient>

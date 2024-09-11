@@ -1,6 +1,7 @@
-import { api, HydrateClient } from "~/trpc/server";
+import { HydrateClient } from "~/trpc/server";
+import { InputTopic } from "~/components/InputTopic";
 
-export default async function Home() {
+export default function Home() {
   return (
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center">
@@ -8,6 +9,7 @@ export default async function Home() {
           <h1 className="text-2xl font-bold tracking-tight">
             Cursor GitHub repos
           </h1>
+          <InputTopic />
         </div>
       </main>
     </HydrateClient>

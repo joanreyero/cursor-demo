@@ -10,4 +10,24 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+model Repo {
+    id             Int      @id @default(autoincrement())
+    name           String
+    url            String   @unique
+    stars          Int
+    forks          Int
+    openIssues     Int
+    lastCommitDate DateTime
+    creationDate   DateTime
+    topic          Topic    @relation(fields: [topicId], references: [id])
+    topicId        Int
+
+    @@index([topicId])
+}
+
+model Topic {
+    id    Int    @id @default(autoincrement())
+    name  String @unique
+    repos Repo[]
+}
 
